@@ -1,0 +1,38 @@
+Step 1 > Create IAM role 
+         
+              Go to AWS Console → IAM → Roles → Create role
+              Select Trusted entity: AWS Service → Use case: EC2
+              Attach AdministratorAccess or a custom policy
+              Name the role (e.g., EC2AdminRole)
+
+step 2 > Create ec2 instance
+step 3 > Attach iam role in to the instance Action > manage role > select created iam role
+step 4 > install terraform
+
+ubuntu
+             
+sudo apt update -y
+sudo apt install -y software-properties-common
+sudo apt-add-repository --yes --update ppa:hashicorp/terraform
+sudo apt install terraform -y
+terraform -version
+
+Redhat
+
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+sudo yum install terraform -y
+terraform -version
+
+
+step 5 > create main.tf paste code inside the main.tf
+step 6 > terraform init
+step 7 > terraform plan
+step 8 > terraform apply
+
+
+ec2-terraform-setup/
+├── main.tf            # Main configuration file
+├── variables.tf       # Input variables
+├── outputs.tf         # Outputs after apply
+└── terraform.tfvars   # (Optional) Variable values
