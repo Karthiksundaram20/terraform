@@ -1,0 +1,11 @@
+variable "service_name" {
+  description = "Service name for tagging EC2 instances"
+  type        = string
+  default     = "demoapp"
+}
+
+variable "key_name" {
+  description = "EC2 Key Pair name"
+  type        = string
+  default     = "terraform"
+}
